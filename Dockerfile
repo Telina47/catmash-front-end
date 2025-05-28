@@ -8,7 +8,7 @@ RUN npm run build --configuration=production
 
 # Étape 2 : image de production avec NGINX
 FROM nginx:alpine
-COPY --from=build /app/dist/* /usr/share/nginx/html
+COPY --from=build /app/dist/catmash-client /usr/share/nginx/html
 
 # Copie la configuration NGINX par défaut
 COPY nginx.conf /etc/nginx/conf.d/default.conf
