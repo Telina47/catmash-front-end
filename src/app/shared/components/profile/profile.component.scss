@@ -1,0 +1,31 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .greeting {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+}

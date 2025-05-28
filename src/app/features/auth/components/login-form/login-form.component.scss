@@ -1,0 +1,53 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+        }
+    }
+
+    button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: #0056b3;
+        }
+
+        &:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}

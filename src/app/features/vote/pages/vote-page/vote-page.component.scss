@@ -1,0 +1,25 @@
+.vote-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.cat {
+    flex: 1 1 300px;
+    max-width: 400px;
+    height: 100%;
+}
+h3 {
+    text-align: center;
+}
+
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 4rem;
+}

@@ -1,0 +1,17 @@
+<div class="overlay">
+    <div class="modal">
+        <h2 *ngIf="!registerMode">Connexion</h2>
+        <h2 *ngIf="registerMode">Inscription</h2>
+
+        <app-login-form *ngIf="!registerMode" (success)="close.emit()" />
+        <app-register-form *ngIf="registerMode" (success)="close.emit()" />
+
+        <div class="actions" *ngIf="!registerMode">
+            <p>Pas encore inscrit ?</p>
+            <button (click)="switchToRegister.emit()">S’enregistrer</button>
+        </div>
+
+        <button class="close-btn" (click)="close.emit()">×</button>
+    </div>
+</div>
+

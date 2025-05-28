@@ -1,0 +1,31 @@
+<div class="tabs">
+    <button *ngFor="let tab of tabs" [class.active]="viewMode === tab.key" (click)="viewMode = tab.key"
+
+>
+        {{ tab.label }}
+    </button>
+</div>
+
+<p class="agreement" *ngIf="stats">
+    Votre accord avec le top : <strong>{{ stats.agreementRate }}%</strong>
+</p>
+<div class="filters">
+    <input type="text" placeholder="Filtrer par ID..." [(ngModel)]="search" />
+
+    <select [(ngModel)]="sortBy">
+        <option value="score">Trier par Elo</option>
+        <option value="wins">Trier par Victoires</option>
+        <option value="losses">Trier par Défaites</option>
+    </select>
+</div>
+  
+<div class="cat-grid" *ngIf="stats">
+    <div class="cat-card" *ngFor="let cat of getDisplayedCats()">
+        <img [src]="cat.imageUrl" />
+        <div class="info">
+            <p><strong>Scores Elo :</strong> {{ cat.score | number:'1.0-0' }}</p>
+            <p><strong>Victoires :</strong> {{ cat.wins }}</p>
+        </div>
+    </div>
+</div>
+  
