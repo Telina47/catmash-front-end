@@ -25,7 +25,9 @@
     </div>
 
     <button type="submit" [disabled]="form.invalid">S'enregistrer</button>
-
-    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    @if(errorMessage){
+        <p class="error-message">{{ errorMessage }}</p>
+    }
+    
 </form>
 

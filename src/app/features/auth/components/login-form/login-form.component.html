@@ -2,21 +2,29 @@
     <div class="form-group">
         <label for="pseudo">Pseudo</label>
         <input id="pseudo" formControlName="pseudo" type="text" placeholder="Votre pseudo" />
-        <div class="error" *ngIf="form.get('pseudo')?.invalid && form.get('pseudo')?.touched">
-            Le pseudo est requis.
-        </div>
+        @if(form.get('pseudo')?.invalid && form.get('pseudo')?.touched){
+            <div class="error">
+                Le pseudo est requis.
+                </div>
+        }
+        
     </div>
 
     <div class="form-group">
         <label for="password">Mot de passe</label>
         <input id="password" formControlName="password" type="password" placeholder="Votre mot de passe" />
-        <div class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
-            Le mot de passe est requis.
-        </div>
+        @if(form.get('password')?.invalid && form.get('password')?.touched){
+            <div class="error">
+                Le mot de passe est requis.
+            </div>
+        }
+        
     </div>
 
     <button type="submit" [disabled]="form.invalid">Se connecter</button>
-
-    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    @if(errorMessage){
+        <p class="error-message">{{ errorMessage }}</p>
+    }
+    
 </form>
 

@@ -1,15 +1,24 @@
 <h3>Lequel de ces chats est le plus beau?</h3>
-<section class="vote-wrapper" *ngIf="cats.length === 2">
-    <app-cat-card class="cat" [id]="cats[0].id" [imageUrl]="cats[0].imageUrl"
-        (selected)="vote(cats[0].id)"></app-cat-card>
-
-    <app-cat-card class="cat" [id]="cats[1].id" [imageUrl]="cats[1].imageUrl"
-        (selected)="vote(cats[1].id)"></app-cat-card>
-</section>
+@if(cats.length === 2){
+    <section class="vote-wrapper">
+        <app-cat-card class="cat" [id]="cats[0].id" [imageUrl]="cats[0].imageUrl"
+            (selected)="vote(cats[0].id)"></app-cat-card>
+    
+        <app-cat-card class="cat" [id]="cats[1].id" [imageUrl]="cats[1].imageUrl"
+            (selected)="vote(cats[1].id)"></app-cat-card>
+    </section>
+    
+}
 <h3> Après avoir voté et une fois connecté, vous pouvez voir vos stats</h3>
-<div *ngIf="cats.length !== 2" class="loading">
-    <p>Chargement...</p>
-</div>
-<app-auth-modal *ngIf="showLoginModal" (close)="closeModals()" (switchToRegister)="openRegister()" />
-
-<app-auth-modal *ngIf="showRegisterModal" [registerMode]="true" (close)="closeModals()" />
+@if(cats.length !== 2){
+    <div class="loading">
+        <p>Chargement...</p>
+    </div>
+    
+}
+@if(showLoginModal){
+    <app-auth-modal (close)="closeModals()" (switchToRegister)="openRegister()" />
+}
+@if(showRegisterModal){
+    <app-auth-modal [registerMode]="true" (close)="closeModals()" />
+}

@@ -1,9 +1,12 @@
 <div class="profile">
     <div class="center">
-        <ng-container *ngIf="isLoggedIn">
-            <span class="greeting">Bonjour {{ displayName }}</span>
-            <button (click)="logout()">Déconnexion</button>
-        </ng-container>
+        @if(isLoggedIn){
+            <ng-container>
+                <span class="greeting">Bonjour {{ displayName }}</span>
+                <button (click)="logout()">Déconnexion</button>
+                </ng-container>
+        }
+       
     </div>
 </div>
   

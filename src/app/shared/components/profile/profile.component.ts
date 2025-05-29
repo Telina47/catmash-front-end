@@ -5,7 +5,6 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports:[NgIf],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
