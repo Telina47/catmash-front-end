@@ -16,7 +16,7 @@ export class VoteService {
   constructor(private http: HttpClient) { }
 
   getRandomPair(): Observable<CatDto[]> {
-    return this.http.get<CatDto[]>(`${environment.apiUrl}/Leaderboard/random`);
+    return this.http.get<CatDto[]>(`${environment.apiUrl}/Vote/random`);
   }
 
   vote(request: VoteRequest): Observable<void> {
